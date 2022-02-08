@@ -1,0 +1,6 @@
+{
+    "serverPort" : 5000,
+    "dbUserURL" : "mongodb+srv://admin:admin@cluster0.58x85.mongodb.net/Cluster0?retryWrites=true&w=majority",
+    "secretKey" : "mern-secret-key",
+    "filePath" : "F:\\reactTest\\server\\files"
+}
