@@ -11,8 +11,8 @@ cd .\server\
 npm run start - start backend server for deploy
 npm run dev - for develop
 
-##Runs the app in the development mode.
+## Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-##Deployed app
+## Deployed app
 https://react-mern-portain.herokuapp.com/
