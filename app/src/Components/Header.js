@@ -74,7 +74,7 @@ export default withRouter(class Header extends Component {
                             </div>
                             <nav className='menu__body'>
                                 <ul className='menu__list'>
-                                    <Li handleLinkClick={this.handleLinkClick} setModalActive={this.setModalActive}/>
+                                    <Li handleLinkClick={this.handleLinkClick} setModalActive={this.setModalActive} popActive={this.burgerMenu}/>
                                 </ul>
                             </nav>  
                             <PopUp active={this.state.modalActive} setActive={this.setModalActive}>

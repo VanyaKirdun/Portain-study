@@ -82,11 +82,7 @@ async (reg, res) => {
                 user[0].goods[check][0].number=user[0].goods[check][0].number-1
             }
             await User.updateOne({_id: reg.user.id}, { $set: {goods: user[0].goods}})
-            // user[0].goods[check][1]--
-            // await User.updateOne({_id: reg.user.id}, { $set: {goods: user[0].goods}})
         }
-        // let data = await User.updateOne({_id: reg.query.id, goods: obj.file.id}, { $pull: {goods: obj.file.id}})
-        // console.log(data)
     } catch(e){
         console.log(e)
         res.send({message: "Can not clear item"})

@@ -34,7 +34,7 @@ const Good = (data) => {
     return (
         <div className='change'>
             <div className='card__picture'>
-                    <img src={`http://localhost:5000/files/${data.data.img}`} alt={data.data.name}/>
+                    <img src={`https://res.cloudinary.com/storageimage/image/upload/v1645386179/${data.data.img}`} alt={data.data.name}/>
             </div>
             <form className='admin__form'>
                 <input type="file" onChange={changeHandler} name="file"/>
@@ -43,7 +43,7 @@ const Good = (data) => {
                 <input onChange={e => setTime(e.target.value)} value={time} placeholder='Введите дату' type="text"/>
                 <input onChange={e => setCost(e.target.value)} value={cost} placeholder='Введите стоимость' type="text"/>
                 <textarea onChange={e => setDescript(e.target.value)} value={descript} placeholder='Введите описание' type="text"/>
-                <button type="submit" onClick={() => {dispatch(changeGoods(data.data.id, name, type, time, cost, descript, file))}}>Изменить товар</button>
+                <button type="button" onClick={() => {dispatch(changeGoods(data.data.id, name, type, time, cost, descript, file, data.data.img))}}>Изменить товар</button>
             </form>
             <div><button type="submit" onClick={()=>{dispatch(deleteGoods(data.data)); window.location.reload(true)}}>Удалить товар</button></div>
         </div>

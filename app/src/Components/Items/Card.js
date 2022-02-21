@@ -8,7 +8,7 @@ const Card = (data) => {
         <div className='card__container'>
             <div className='card' onClick={()=>data.activeItem(data)}>
                 <div className='picture'>
-                    <img src={`http://localhost:5000/files/${data.img}`} alt={data.name}/>
+                    <img src={`https://res.cloudinary.com/storageimage/image/upload/v1645386179/${data.img}`} alt={data.name}/>
                 </div>
                 <p className='card__text'>{data.name}</p>
                 <p className='card__text'>{data.cost}$</p>

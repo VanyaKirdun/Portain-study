@@ -8,11 +8,18 @@ const Li = (props) => {
     const dispatch = useDispatch()    
     const isAuth = useSelector(state => state.user.isAuth)
     const data = useSelector(state => state.user)
+    function hideAndScroll(){
+        props.handleLinkClick()
+        if( window.innerWidth <= 800 ){
+            props.popActive()
+        }
+        
+    }
     return (
         <li>
-            <Link to='/' className='menu__link'>ГЛАВНАЯ</Link>
-            <Link to='/catalog' className='menu__link'>КАТАЛОГ</Link>
-            <span onClick={props.handleLinkClick}className='menu__link'>ПОСТУПЛЕНИЕ</span>
+            <Link onClick={props.popActive} to='/' className='menu__link'>ГЛАВНАЯ</Link>
+            <Link onClick={props.popActive} to='/catalog' className='menu__link'>КАТАЛОГ</Link>
+            <span onClick={hideAndScroll} className='menu__link'>ПОСТУПЛЕНИЕ</span>
             {!isAuth && <span className='menu__link' onClick={()=>props.setModalActive(true, true)}>РЕГИСТРАЦИЯ</span>}
             {!isAuth && <span className='menu__link' onClick={()=>props.setModalActive(true, false)}>АВТОРИЗАЦИЯ</span>}
             {isAuth && data.typeUser==='admin' && <a href='/admin' className='menu__link'>АДМИН</a>}

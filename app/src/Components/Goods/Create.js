@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {createGoods} from "../../actions/goods.js";
 
 
-const Create = (props) => {
+const Create = () => {
     const [name, setName] = useState("")
     const [type, setType] = useState("")
     const [time, setTime] = useState("")
@@ -36,7 +36,7 @@ const Create = (props) => {
                 <input onChange={e => setTime(e.target.value)} placeholder='Введите дату' type="text"/>
                 <input onChange={e => setCost(e.target.value)} placeholder='Введите стоимость' type="text"/>
                 <textarea onChange={e => setDescript(e.target.value)} placeholder='Введите описание' type="text"/>
-                <button type="submit" onClick={() => {dispatch(createGoods(name, type, time, cost, descript, file))}}>Создать</button>
+                <button type="button" onClick={() => {dispatch(createGoods(name, type, time, cost, descript, file))}}>Создать</button>
             </form>
     )
 }

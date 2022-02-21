@@ -22,7 +22,7 @@ const Login = (props) => {
             setEmailError('')
         }
     
-        if(emailError || passwordError /*|| (this.state.authType === 'РЕГИСТРАЦИЯ' && this.state.copyPasswordError)*/) {
+        if(emailError || passwordError) {
             setFormValid(false)
         } else {
             setFormValid(true)
@@ -40,7 +40,7 @@ const Login = (props) => {
             setPasswordError('')
         }
 
-        if(emailError || passwordError /*|| (this.state.authType === 'РЕГИСТРАЦИЯ' && this.state.copyPasswordError)*/) {
+        if(emailError || passwordError) {
            setFormValid(false)
         } else {
             setFormValid(true)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import Buy from '../Components/Goods/Buy';
+import { API_URL } from '../config';
 
 class Item extends Component {
     state = {
@@ -9,7 +10,7 @@ class Item extends Component {
 
     componentDidMount() {
         const id = this.props.match.params.id;
-        const apiUrl = `http://localhost:5000/api/goods/${id}`;
+        const apiUrl = `${API_URL}api/goods/${id}`;
         fetch(apiUrl)
            .then((response) => response.json())
            .then((data) => {
@@ -22,7 +23,7 @@ class Item extends Component {
             <div className='goods'>
                 <div className='goods__info'>
                     <div className='picture'>
-                        <img src={`http://localhost:5000/files/${this.state.item.img}`} alt={this.state.item.name}/>
+                        <img src={`https://res.cloudinary.com/storageimage/image/upload/v1645386179/${this.state.item.img}`} alt={this.state.item.name}/>
                     </div>
                     <div className='goods__data'>
                         <h1>{this.state.item.name}</h1>

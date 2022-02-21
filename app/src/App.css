@@ -66,11 +66,9 @@ body._lock{
 .header__info{
     background-color: #000000;
     height: 43px;
-    /* height: 4.4vh; */
 }
 .header__block{
     height: 81px;
-    /* height: 8.6vh; */
     background-color: #0F0F0F;
 }
 .header__work{
@@ -139,6 +137,10 @@ body._lock{
     max-width: 500px;
 }
 
+.admin__form > div{
+    color: black;
+}
+
 .change{
     display: flex;
     flex-direction: column;
@@ -159,7 +161,6 @@ body._lock{
 .main__title-block{
     background-image: url(./img/Rectangle\ 3.png);
     height: 814px;
-    /* height: 86.9vh; */
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -223,17 +224,11 @@ body._lock{
 }
 .main__collection-block{
     height: 730px;
-    /* height: 78vh; */
 }
 .main__collection-block_old{
     height: 600px;
-    /* height: 65vh; */
-    /* flex-wrap: wrap; */
 }
 .main__collection-last{
-    /* height: 730px; */
-    /* max-width: 1040px; */
-    /* max-width: 53vw; */
     width: 100%;
     padding: 96px 81px 0;
     box-sizing: border-box;
@@ -291,7 +286,6 @@ body._lock{
     width: 100%;
 }
 .main__collection-new{
-    /* height: 730px; */
     background-image: url(./img/Rectangle\ 8.png);
     display: flex;
     background-size: cover;
@@ -307,10 +301,8 @@ body._lock{
 }
 .main__collection-picture{
     background-image: url(./img/Rectangle\ 9.png);
-    /* max-width: 880px; */
     max-width: 44vw;
     background-position: center;
-    /* height: 600px; */
     background-size: cover;
 }
 .main__collection-container, .main__collection-container-old{
@@ -343,12 +335,10 @@ body._lock{
 }
 .main__collection-old{
     width: 100%;
-    /* max-width: 1023px; */
     max-width: 52vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 600px; */
 }
 
 .button{
@@ -392,12 +382,9 @@ body._lock{
 
 .card__container{
     max-width: 260px;
-    /* max-width: 13vw; */
-    /* height: 410px; */
 }
 
 .card{
-    /* max-width: 260px; */
     width: 100%;
     cursor: pointer;
 }
@@ -412,15 +399,6 @@ body._lock{
     font-size: 1.1rem;
 }
 .picture{
-    /* background-color: #191B1C;
-    max-width: 260px;
-    max-height: 325px;
-    width: 100%;
-    height: 100%; */
-    /* margin-bottom: 29px;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
     width: 100%;
     height: 325px;
     background: #191B1C;
@@ -429,7 +407,7 @@ body._lock{
     align-items: center;
 }
 .picture>img{
-    /* max-width: 100%; */
+    max-width: 100%;
 }
 
 .goods{
@@ -438,7 +416,7 @@ body._lock{
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 100px 0 50px 0;
+    padding: 100px 50px 50px;
 }
 
 .goods__info{
@@ -448,6 +426,7 @@ body._lock{
     margin-right: auto;
     flex: 0 0 300px;
     width: 100%;
+    justify-content: center;
 }
 
 .goods__info>.picture{
@@ -459,6 +438,8 @@ body._lock{
 .goods__data{
     font-size: 1.5rem;
     font-family: Playfair Display;
+    width: 100%;
+    max-width: 210px;
 }
 
 .goods__descript{
@@ -474,7 +455,6 @@ body._lock{
     align-items: center;
     padding-top: 123px;
     padding-bottom: 100px;
-    /* min-height: 1289px; */
     box-sizing: border-box;
     background-color: #000000;
 }
@@ -523,7 +503,6 @@ body._lock{
     margin-top: 82px;
     row-gap: 40px;
 }
-.brands__item{}
 
 .info{
     min-height: 400px;
@@ -628,10 +607,6 @@ body._lock{
 
 a.footer__item{
     text-decoration: underline;
-}
-
-.catalog{
-
 }
 
 .catalog__title::after{
@@ -804,15 +779,6 @@ a.footer__item{
     }
 }
 
-/* @media (max-width: 1300px) {
-    .main__collection-block{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .main__collection-new{
-        max-width: 100%;   
-    }
-} */
 @media (max-width: 1050px) {
     .auth{
         padding-right: 50px;
@@ -920,7 +886,7 @@ a.footer__item{
         -ms-transition: left 0.3s ease 0s;
         -o-transition: left 0.3s ease 0s;
         overflow: auto;
-        z-index: 99999;
+        z-index: 95;
     }
     .menu__body._active{
         left: 0;
@@ -937,6 +903,15 @@ a.footer__item{
     }
     .auth__input>input {
         font-size: 12px;
+    }
+}
+
+@media(max-width: 550px){
+    .goods__info{
+        flex-wrap: wrap;
+    }
+    .goods__info>.picture {
+        height: auto;
     }
 }
 

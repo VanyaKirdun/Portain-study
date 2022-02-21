@@ -3,24 +3,15 @@ import { Link } from 'react-router-dom';
 import Card from '../Components/Items/Card'
 import CardList from '../Components/Items/CardList'
 import Brands from '../Components/Brands';
+import { API_URL } from '../config';
 
 export default class Main extends Component {
 
     state = {
         lastCards: [
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'},
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'},
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'}
         ],
+        collectionYear: 2021,
         newCards: [
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'},
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'},
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'},
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'},
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'},
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'},
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'},
-            // {name: 'Louis XVI ATHOS', cost: '165 000 руб.', img: './62050 1.png'}
         ],
         brandsName: [
             {img: './Rectangle 2.png'},
@@ -31,7 +22,7 @@ export default class Main extends Component {
     }
 
     componentDidMount() {
-        const apiUrl = 'http://localhost:5000/api/goods';
+        const apiUrl = `${API_URL}api/goods`;
         fetch(apiUrl)
           .then((response) => response.json())
           .then((data) => {
@@ -110,10 +101,10 @@ export default class Main extends Component {
                 <div className='main__collection-picture'></div>
                 <div className='main__collection-old'>
                     <div className='main__collection-container-old'>
-                        <div className='main__collection-title_old'>коллекция 2018</div>
+                        <div className='main__collection-title_old'>коллекция {this.state.collectionYear}</div>
                         <p className='main__collection-subtitle'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non rutrum ornare ut mattis habitant dui arcu. Sagittis amet nunc ut neque quis nibh arcu. Vivamus vestibulum nisi et venenatis sed scelerisque magna consectetur. Amet convallis quis gravida facilisis vulputate. Faucibus facilisi habitasse ipsum interdum dictum aliquet. Velit quis ullamcorper pulvinar nulla malesuada integer. Aenean praesent viverra nulla nullam natoque volutpat curabitur auctor. Viverra viverra ullamcorper scelerisque risus dignissim egestas. Id aliquam a aliquam egestas leo orci pharetra sed diam.</p>
                         <div className='main__collection-link_old button'>
-                        <span className='card__text' onClick={()=>{this.filterRedirect('2018')}}>ПОСМОТРЕТЬ КОЛЛЕКЦИЮ</span>
+                        <span className='card__text' onClick={()=>{this.filterRedirect(`${this.state.collectionYear}`)}}>ПОСМОТРЕТЬ КОЛЛЕКЦИЮ</span>
                         </div>
                     </div>
                 </div>

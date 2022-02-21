@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-//import React, {useState} from 'react';
 import CardList from '../Components/Items/CardList'
 import Create from '../Components/Goods/Create';
 import Good from '../Components/Items/Good'
 import { Redirect } from 'react-router-dom';
 import Searcher from '../Components/Searcher';
+import { API_URL } from '../config';
 
 export default class Admin extends Component {
     state = {
-        apiUrl: 'http://localhost:5000/api/goods',
+        apiUrl: `${API_URL}api/goods`,
         allCards: [],
         searchStatus: false,
         status: false,
@@ -17,7 +17,6 @@ export default class Admin extends Component {
     }
 
     loadFile(){
-        
         fetch(this.state.apiUrl)
         .then((response) => response.json())
         .then((data) => {
@@ -50,11 +49,11 @@ export default class Admin extends Component {
 
     searchedGoods=(data, filter='all')=>{
         if(data.trim().length!==0){
-            this.setState({apiUrl: `http://localhost:5000/api/goods/name/${data.trim()}/${filter}`})
+            this.setState({apiUrl: `${API_URL}api/goods/name/${data.trim()}/${filter}`})
         } else if(filter!=='all'){
-            this.setState({apiUrl: `http://localhost:5000/api/goods/filter/${filter}`})
+            this.setState({apiUrl: `${API_URL}api/goods/filter/${filter}`})
         } else {
-            this.setState({apiUrl: `http://localhost:5000/api/goods`})
+            this.setState({apiUrl: `${API_URL}api/goods`})
         }
         this.setState({searchStatus: true})
     }

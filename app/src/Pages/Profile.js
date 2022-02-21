@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardList from '../Components/Items/CardList'
 import { Redirect } from 'react-router-dom';
+import { API_URL } from '../config';
 
 export default class Profile extends Component {
     state = {
@@ -13,13 +14,13 @@ export default class Profile extends Component {
 
     componentDidMount() {
         if(this.props.typeUser==='user'){
-            const apiUrl = `http://localhost:5000/api/user/${this.props.userId}/goods/`;
+            const apiUrl = `${API_URL}api/user/${this.props.userId}/goods/`;
             fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
                 if(Object.values(data['goods']).length!==0){
                     Object.values(data['goods']).forEach(item=> {
-                        const goodsUrl = `http://localhost:5000/api/goods/${item[0].itemId}`
+                        const goodsUrl = `${API_URL}api/goods/${item[0].itemId}`
                         fetch(goodsUrl)
                         .then((responses) => responses.json())
                         .then((goods) => {
