@@ -22,12 +22,23 @@ export default withRouter(class Header extends Component {
             return(<Login setModalActive={this.setModalActive}/>)
         }
     }
-    
+
     burgerMenu(){
         document.body.classList.toggle('_lock');
         document.querySelector('.menu__icon').classList.toggle('_active');
         document.querySelector('.menu__body').classList.toggle('_active');
+        window.addEventListener("resize", ()=>{
+            if( window.innerWidth >= 800 ){
+                if(!document.querySelector('.popUp').classList.contains('active')){
+                  document.body.classList.remove('_lock');
+                }
+                document.querySelector('.menu__icon').classList.remove('_active');
+                document.querySelector('.menu__body').classList.remove('_active');
+              }
+        })
     }
+
+    
         
     handleLinkClick =()=> {
         let element = document.getElementById('hook');
@@ -42,9 +53,10 @@ export default withRouter(class Header extends Component {
     setModalActive = (active, type) => {
         this.setState({modalActive: active});
         this.setState({authType: type});
+        document.body.classList.toggle('_lock');
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate() {
         if (this.state.scroll) {
             let element = document.getElementById('hook');
             element.scrollIntoView();
@@ -56,7 +68,7 @@ export default withRouter(class Header extends Component {
         return(
             <header className="header">
                 <div className='header__info'>
-                    <div className="header__container">
+                    <div className="header__containeDr">
                         <div className='header__work'>
                             <a className='header__data' href='tel:+8(812)123-45-67'><img src={call} alt={call}/></a>
                             <a className='header__data' href='tel:+8(812)123-45-67'>8(812) 123-45-67</a>

@@ -76,6 +76,7 @@ export default class Catalog extends Component {
                 <Searcher searchedGoods={this.searchedGoods}/>
                 <CardList
                     data={this.state.all}
+                    uniqueKey={'goods'}
                     activeItem={this.setActiveItem}
                 />
             </div>
