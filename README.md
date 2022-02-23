@@ -3,7 +3,7 @@
 ## Client
 cd .\app\  
 npm run dev - for develop  
-npm run build - build project to launch server   
+npm run build - build project for server launching
 npm run start - start server for deploy  
 
 ## Server
