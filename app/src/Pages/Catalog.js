@@ -37,7 +37,9 @@ export default class Catalog extends Component {
         if(this.props.location.pathname.split('/').pop()!=='catalog'){
             let data = this.props.location.pathname.split('/').pop()
             if(isNaN(+data)){
-                this.state.apiUrl = `${API_URL}api/goods/filter/${data}`;
+                this.setState({
+                    apiUrl: `${API_URL}api/goods/filter/${data}`
+                })
                 this.loadFile()
             } else {
                 this.loadFile(+data)
