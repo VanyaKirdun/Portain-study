@@ -15,4 +15,4 @@ npm run dev - for develop
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.  
 
 ## Deployed app  
-https://react-mern-portain.herokuapp.com/  
+https://portain-study-frontend-production.up.railway.app/
